@@ -21,7 +21,6 @@ export default function Home() {
       if (response.status !== 200) {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
-
       setResult(data.result);
       setAnimalInput("");
     } catch(error) {
@@ -34,24 +33,24 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>DevOps Bridge</title>
+
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+
+        <h3>Enter Your Prompt</h3>
         <form onSubmit={onSubmit}>
           <input
             type="text"
             name="animal"
-            placeholder="Enter an animal"
+            placeholder="Prompt"
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Submit" />
         </form>
-        <div className={styles.result}>{result}</div>
+        <div className={styles.result} >{result}</div>
       </main>
     </div>
   );
